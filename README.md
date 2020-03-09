@@ -25,7 +25,7 @@ sudo pip3 install tensorflow-gpu==1.15.0
 To install other dependencies: 
 ```
 sudo pip3 install opencv-python
-sudo pip3 install openc3d-python==0.7.0.0
+sudo pip3 install open3d-python==0.7.0.0
 sudo pip3 install scikit-learn
 sudo pip3 install tqdm
 sudo pip3 install shapely
