@@ -1,0 +1,3 @@
+[submodule "kitti_native_evaluation"]
+	path = kitti_native_evaluation
+	url = https://github.com/asharakeh/kitti_native_evaluation

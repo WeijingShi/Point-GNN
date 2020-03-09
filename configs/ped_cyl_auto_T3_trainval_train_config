@@ -1,0 +1,64 @@
+{
+    "NUM_GPU": 2,
+    "NUM_TEST_SAMPLE": -1,
+    "batch_size": 4,
+    "capacity": 1,
+    "checkpoint_path": "model",
+    "config_path": "config",
+    "data_aug_configs": [
+        {
+            "method_kwargs": {
+                "expend_factor": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "method_name": "normal",
+                "yaw_std": 0.39269908169872414
+            },
+            "method_name": "random_rotation_all"
+        },
+        {
+            "method_kwargs": {
+                "flip_prob": 0.5
+            },
+            "method_name": "random_flip_all"
+        },
+        {
+            "method_kwargs": {
+                "appr_factor": 10,
+                "expend_factor": [
+                    1.1,
+                    1.1,
+                    1.1
+                ],
+                "max_overlap_num_allowed": 100,
+                "max_overlap_rate": 0.01,
+                "max_trails": 100,
+                "method_name": "normal",
+                "xyz_std": [
+                    3,
+                    0,
+                    3
+                ]
+            },
+            "method_name": "random_box_shift"
+        }
+    ],
+    "decay_factor": 0.25,
+    "decay_step": 400000,
+    "gpu_memusage": -1,
+    "initial_lr": 0.32,
+    "load_dataset_every_N_time": 0,
+    "load_dataset_to_mem": true,
+    "max_epoch": 1611,
+    "max_steps": 1000000,
+    "num_load_dataset_workers": 16,
+    "optimizer": "sgd",
+    "optimizer_kwargs": {},
+    "save_every_epoch": 20,
+    "train_dataset": "trainval_pedestrian_cyclist.txt",
+    "train_dir": "./checkpoints/ped_cyl_auto_T3_trainval",
+    "unify_copies": true,
+    "visualization": false
+}

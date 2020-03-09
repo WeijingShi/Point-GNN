@@ -1,0 +1,181 @@
+{
+    "box_encoding_method": "classaware_all_class_box_encoding",
+    "downsample_by_voxel_size": null,
+    "eval_is_training": true,
+    "graph_gen_kwargs": {
+        "add_rnd3d": true,
+        "base_voxel_size": 0.8,
+        "downsample_method": "random",
+        "level_configs": [
+            {
+                "graph_gen_kwargs": {
+                    "num_neighbors": -1,
+                    "radius": 1.0
+                },
+                "graph_gen_method": "disjointed_rnn_local_graph_v3",
+                "graph_level": 0,
+                "graph_scale": 1
+            },
+            {
+                "graph_gen_kwargs": {
+                    "num_neighbors": 256,
+                    "radius": 4.0
+                },
+                "graph_gen_method": "disjointed_rnn_local_graph_v3",
+                "graph_level": 1,
+                "graph_scale": 1
+            }
+        ]
+    },
+    "graph_gen_method": "multi_level_local_graph_v3",
+    "input_features": "i",
+    "label_method": "Car",
+    "loss": {
+        "cls_loss_type": "softmax",
+        "cls_loss_weight": 0.1,
+        "loc_loss_weight": 10.0
+    },
+    "model_kwargs": {
+        "layer_configs": [
+            {
+                "graph_level": 0,
+                "kwargs": {
+                    "output_MLP_activation_type": "ReLU",
+                    "output_MLP_depth_list": [
+                        300,
+                        300
+                    ],
+                    "output_MLP_normalization_type": "NONE",
+                    "point_MLP_activation_type": "ReLU",
+                    "point_MLP_depth_list": [
+                        32,
+                        64,
+                        128,
+                        300
+                    ],
+                    "point_MLP_normalization_type": "NONE"
+                },
+                "scope": "layer1",
+                "type": "scatter_max_point_set_pooling"
+            },
+            {
+                "graph_level": 1,
+                "kwargs": {
+                    "auto_offset": false,
+                    "auto_offset_MLP_depth_list": [
+                        64,
+                        3
+                    ],
+                    "auto_offset_MLP_feature_activation_type": "ReLU",
+                    "auto_offset_MLP_normalization_type": "NONE",
+                    "edge_MLP_activation_type": "ReLU",
+                    "edge_MLP_depth_list": [
+                        300,
+                        300
+                    ],
+                    "edge_MLP_normalization_type": "NONE",
+                    "update_MLP_activation_type": "ReLU",
+                    "update_MLP_depth_list": [
+                        300,
+                        300
+                    ],
+                    "update_MLP_normalization_type": "NONE"
+                },
+                "scope": "layer2",
+                "type": "scatter_max_graph_auto_center_net"
+            },
+            {
+                "graph_level": 1,
+                "kwargs": {
+                    "auto_offset": false,
+                    "auto_offset_MLP_depth_list": [
+                        64,
+                        3
+                    ],
+                    "auto_offset_MLP_feature_activation_type": "ReLU",
+                    "auto_offset_MLP_normalization_type": "NONE",
+                    "edge_MLP_activation_type": "ReLU",
+                    "edge_MLP_depth_list": [
+                        300,
+                        300
+                    ],
+                    "edge_MLP_normalization_type": "NONE",
+                    "update_MLP_activation_type": "ReLU",
+                    "update_MLP_depth_list": [
+                        300,
+                        300
+                    ],
+                    "update_MLP_normalization_type": "NONE"
+                },
+                "scope": "layer3",
+                "type": "scatter_max_graph_auto_center_net"
+            },
+            {
+                "graph_level": 1,
+                "kwargs": {
+                    "auto_offset": false,
+                    "auto_offset_MLP_depth_list": [
+                        64,
+                        3
+                    ],
+                    "auto_offset_MLP_feature_activation_type": "ReLU",
+                    "auto_offset_MLP_normalization_type": "NONE",
+                    "edge_MLP_activation_type": "ReLU",
+                    "edge_MLP_depth_list": [
+                        300,
+                        300
+                    ],
+                    "edge_MLP_normalization_type": "NONE",
+                    "update_MLP_activation_type": "ReLU",
+                    "update_MLP_depth_list": [
+                        300,
+                        300
+                    ],
+                    "update_MLP_normalization_type": "NONE"
+                },
+                "scope": "layer4",
+                "type": "scatter_max_graph_auto_center_net"
+            },
+            {
+                "graph_level": 1,
+                "kwargs": {
+                    "activation_type": "ReLU",
+                    "normalization_type": "NONE"
+                },
+                "scope": "output",
+                "type": "classaware_predictor"
+            }
+        ],
+        "regularizer_kwargs": {
+            "scale": 5e-07
+        },
+        "regularizer_type": "l1"
+    },
+    "model_name": "multi_layer_fast_local_graph_model_v2",
+    "nms_overlapped_thres": 0.01,
+    "num_classes": 4,
+    "runtime_graph_gen_kwargs": {
+        "add_rnd3d": false,
+        "base_voxel_size": 0.8,
+        "level_configs": [
+            {
+                "graph_gen_kwargs": {
+                    "num_neighbors": -1,
+                    "radius": 1.0
+                },
+                "graph_gen_method": "disjointed_rnn_local_graph_v3",
+                "graph_level": 0,
+                "graph_scale": 0.5
+            },
+            {
+                "graph_gen_kwargs": {
+                    "num_neighbors": -1,
+                    "radius": 4.0
+                },
+                "graph_gen_method": "disjointed_rnn_local_graph_v3",
+                "graph_level": 1,
+                "graph_scale": 0.5
+            }
+        ]
+    }
+}

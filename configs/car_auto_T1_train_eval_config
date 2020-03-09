@@ -1,0 +1,13 @@
+{
+    "NUM_TEST_SAMPLE": 3769,
+    "checkpoint_path": "model",
+    "config_path": "config",
+    "data_aug_configs": [],
+    "eval_dataset": "val.txt",
+    "eval_dir": "./checkpoints/car_auto_T1_train_eval",
+    "eval_every_second": 60,
+    "gpu_memusage": -1,
+    "max_step": 1400170,
+    "train_dir": "./checkpoints/car_auto_T1_train",
+    "visualization": false
+}
