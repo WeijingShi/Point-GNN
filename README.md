@@ -19,16 +19,16 @@ year = {2020}
 
 We use Tensorflow 1.15 for this implementation. Please [install CUDA](https://developer.nvidia.com/cuda-10.0-download-archive) if you want GPU support.   
 ```
-sudo pip3 install tensorflow-gpu==1.15.0
+pip3 install --user tensorflow-gpu==1.15.0
 ```
 
 To install other dependencies: 
 ```
-sudo pip3 install opencv-python
-sudo pip3 install open3d-python==0.7.0.0
-sudo pip3 install scikit-learn
-sudo pip3 install tqdm
-sudo pip3 install shapely
+pip3 install --user opencv-python
+pip3 install --user open3d-python==0.7.0.0
+pip3 install --user scikit-learn
+pip3 install --user tqdm
+pip3 install --user shapely
 ```
 
 ### KITTI Dataset
