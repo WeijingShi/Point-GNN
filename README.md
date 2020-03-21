@@ -141,7 +141,7 @@ optional arguments:
 ```
 For example:
 ```
-python3 train.py configs/car_auto_T3_train_train_config configs/car_auto_T2_train_config
+python3 train.py configs/car_auto_T3_train_train_config configs/car_auto_T3_train_config
 ```
 We strongly recommand readers to view the train_config before starting the training. 
 Some common parameters which you might want to change first:
