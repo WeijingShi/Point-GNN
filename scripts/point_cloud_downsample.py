@@ -5,6 +5,7 @@ from dataset.kitti_dataset import KittiDataset
 from sklearn.cluster import KMeans
 from tqdm import tqdm
 
+
 dataset = KittiDataset(
     '../dataset/kitti/image/training/image_2',
     '../dataset/kitti/velodyne/training/velodyne/',
